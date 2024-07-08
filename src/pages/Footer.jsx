@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <div className="mt-[600px] md:mt-[100px] bg-[#F6F6F6] md:pt-[150px] xl:mt-0 xl:pt-[250px]">
       <div className="relative">
-        <div className=" justify-center m-6 border-[1px]  z-10  bg-red-200  xl:w-[35%] md:w-[45%] md:h-[430px] xl:h-[550px]  md:pt-0    absolute xl:left-[800px] xl:bottom-[130px] md:left-[400px] md:bottom-[150px] left-14  bottom-[300px] bg-white border-white drop-shadow-xl  rounded-lg md:p-5 md:pb-0 p-10">
+        <div className=" justify-center m-6 border-[1px]  z-10   xl:w-[35%] md:w-[45%] md:h-[430px] xl:h-[550px]  md:pt-0    absolute xl:left-[800px] xl:bottom-[130px] md:left-[400px] md:bottom-[150px] left-14  bottom-[300px] bg-white border-white drop-shadow-xl  rounded-lg md:p-5 md:pb-0 p-10">
           <form className="flex flex-col drop-shadow-xl   mt-7   justify-center gap-6 md:text-[12px]">
             <div>
             <input type="text" className="border-[1px] w-full  xl:w-full border-[#0A142F] rounded-lg p-4 xl:p-4 md:p-3 "  placeholder="Name" name="FullName" required />
