@@ -329,7 +329,7 @@ const Home = () => {
             </Link>
           </div>
         </div>
-        <div className="md:flex md:gap-[70px] items-center xl:gap-[700px] hidden  w-screen justify-center">
+        <div className="md:flex md:gap-[50px] items-center xl:gap-[600px] hidden md:px-1  w-screen justify-center">
           <div className="flex gap-3">
             <p className="noto-sans-regular">Showing</p>
             <h1 className="noto-sans-bold">1 to 5 of 120</h1>
@@ -571,7 +571,7 @@ const Home = () => {
             </Link>
           </div>
         </div>
-        <div className="md:flex md:gap-[90px] items-center xl:gap-[700px] hidden  w-screen justify-center">
+        <div className="md:flex md:gap-[50px] items-center xl:gap-[600px] hidden  w-screen justify-center">
           <div className="flex gap-3">
             <p className="noto-sans-regular">Showing</p>
             <h1 className="noto-sans-bold">1 to 5 of 120</h1>
