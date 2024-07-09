@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div className="md:px-14 ">
+    <div className="md:px-5 ">
       <img
         src="https://res.cloudinary.com/demmasgzp/image/upload/v1720201061/Stage2/Frame_1171276308_waymuq.png"
         className="hidden p-8 xl:flex"
