@@ -7,7 +7,7 @@ import Cart from "../pages/Cart";
 const Navbar = () => {
   const [show, setShow] = useState(false);
   return (
-    <nav className="bg-white w-full xl:px-28 pb-4 border-[rgba(9,9,9,0.1)] xl:mt-12 md:px-14 noto-sans-regular mt-8 my-4 flex justify-between  items-center">
+    <nav className="bg-white px-5 w-full xl:px-28 pb-4 border-[rgba(9,9,9,0.1)] xl:mt-12 md:px-14 noto-sans-regular mt-8 my-4 flex justify-between  items-center">
       <Link to={"/"} className="flex items-center ">
         <img
           src={logo}

@@ -43,7 +43,7 @@ const Cart = () => {
           </div>
           <div className="xl:flex md:flex items-center gap-5">
             <p className="text-[16px]">Color</p>
-            <div className="grid grid-cols-4 w-[38%] md:hidden  xl:flex gap-5 my-3   ">
+            <div className="grid grid-cols-4 w-[55%] md:hidden  xl:flex gap-5 my-3   ">
               <p className=" bg-[#D3A693] p-4 w-4 rounded-full"></p>
               <p className=" bg-[#2C384C] p-4 w-4 rounded-full"></p>
               <p className=" bg-[#5C493B] p-4 w-4 rounded-full"></p>
@@ -103,7 +103,7 @@ const Cart = () => {
           </div>
           <div className="xl:flex md:flex items-center gap-5">
             <p className="text-[16px]">Color</p>
-            <div className="grid grid-cols-4 w-[38%] md:hidden  xl:flex gap-5 my-3   ">
+            <div className="grid grid-cols-4 w-[55%] md:hidden  xl:flex gap-5 my-3   ">
               <p className=" bg-[#D3A693] p-4 w-4 rounded-full"></p>
               <p className=" bg-[#2C384C] p-4 w-4 rounded-full"></p>
               <p className=" bg-[#5C493B] p-4 w-4 rounded-full"></p>
