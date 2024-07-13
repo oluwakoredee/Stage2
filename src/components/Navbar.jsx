@@ -1,11 +1,25 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../src/assets/Frame 1171276314.png";
 import Cart from "../pages/Cart";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  useEffect(() => {
+    const checkScroll = () => {
+      if (window.scrollY >= 15) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", checkScroll);
+    return () => {
+      window.removeEventListener("scroll", checkScroll);
+    };
+  }, []);
   return (
     <nav className="bg-white px-5 w-full xl:px-28 pb-4 border-[rgba(9,9,9,0.1)] xl:mt-12 md:px-14 noto-sans-regular mt-8 my-4 flex justify-between  items-center">
       <Link to={"/"} className="flex items-center ">
@@ -45,20 +59,25 @@ const Navbar = () => {
 
       <div className="md:hidden">
         <span
-          className="text-white relative xl:hidden z-40"
+          className={`text-white relative xl:hidden z-40
+              ${
+              isScrolled
+                ? 'fixed bg-gray-400 rounded-full bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100'
+                : ''
+            }`}
           onClick={() => setShow((prev) => !prev)}
         >
           {show ? (
             <img
               src="https://res.cloudinary.com/demmasgzp/image/upload/v1720194235/Stage2/Vector_1_djtowv.png"
               alt=""
-              className="h-7 w-9 text-3xl right-5 top-6 fixed z-30"
+              className="h-7 w-9 text-3xl right-5 top-9 fixed z-30"
             />
           ) : (
             <img
               src="https://res.cloudinary.com/demmasgzp/image/upload/v1720194235/Stage2/Vector_1_djtowv.png"
               alt=""
-              className="h-7 w-9 text-3xl right-5 top-6 fixed z-30"
+              className="h-7 w-9 text-3xl right-5 top-9 fixed z-30"
             />
           )}
         </span>
