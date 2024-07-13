@@ -4,44 +4,45 @@ import { useEffect, useState } from "react";
 import Image from "../components/Image"; // thi is not imported correctly
 // import getProducts from '../utils'
 import axios from "axios";
-import useLocalStorage from '../hook/use-localstorage';
-import useDataControl from '../hook/use-datacontrol';
+import useLocalStorage from "../hook/use-localstorage";
+import useDataControl from "../hook/use-datacontrol";
 
 const app_ID = import.meta.env.VITE_APP_ID;
 const org_ID = import.meta.env.VITE_ORG_ID;
 const api_KEY = import.meta.env.VITE_API_KEY;
 
-
-
 const Home = () => {
   const [products, setProducts] = useState([]);
 
-  const [slicedData, handleIncrement, handleDecrement] = useDataControl(products);
-  
-const [_, setCart] = useLocalStorage('tumbi', []);
+  const [slicedData, handleIncrement, handleDecrement] =
+    useDataControl(products);
 
-const addToCart = (cartItem) => {
-  setCart((prevCart) => {
-    // Check if the product already exists in the cart
-    const existingItemIndex = prevCart.findIndex((item) => item.id === cartItem.id);
+  const [_, setCart] = useLocalStorage("tumbi", []);
 
-    if (existingItemIndex !== -1) {
-      // If the product exists, update the count
-      const updatedCart = [...prevCart];
-      updatedCart[existingItemIndex].count++;
-      return updatedCart;
-    } else {
-      // If the product doesn't exist, add it to the cart with a count of 1
-      return [...prevCart, { ...cartItem, count: 1 }];
-    }
-  });
-};
+  const addToCart = (cartItem) => {
+    setCart((prevCart) => {
+      // Check if the product already exists in the cart
+      const existingItemIndex = prevCart.findIndex(
+        (item) => item.id === cartItem.id
+      );
+
+      if (existingItemIndex !== -1) {
+        // If the product exists, update the count
+        const updatedCart = [...prevCart];
+        updatedCart[existingItemIndex].count++;
+        return updatedCart;
+      } else {
+        // If the product doesn't exist, add it to the cart with a count of 1
+        return [...prevCart, { ...cartItem, count: 1 }];
+      }
+    });
+  };
   useEffect(() => {
     const getProducts = async () => {
       try {
         const res = await axios
           .get(
-            `/api/products?organization_id=${org_ID}&reverse_sort=false&Appid=${app_ID}&Apikey=${api_KEY} `,
+            "/api/products?organization_id=0a29a1ca82114a28bc344b66541f2f5a&reverse_sort=false&Appid=S7MLUZK0Q3ASUBR&Apikey=9191648fb8944066b8459043e1e32b6e20240712161516052677",
             { withCredentials: true, credentials: "included" }
           )
           .then((e) => {
@@ -197,9 +198,16 @@ const addToCart = (cartItem) => {
                   <p>(2k)</p>
                 </div>
                 <p className="text-[#269255]"> {product.description}</p>
-                <button className="flex bg-[#269255] text-white hover:bg-green-800 w-[65%] rounded-xl justify-center gap-2 px-3 p-1 items-center " onClick={()=> addToCart(product)}>
+                <button
+                  className="flex bg-[#269255] text-white hover:bg-green-800 w-[65%] rounded-xl justify-center gap-2 px-3 p-1 items-center "
+                  onClick={() => addToCart(product)}
+                >
                   <p>Add to Cart</p>
-                  <img src="https://res.cloudinary.com/demmasgzp/image/upload/v1720901305/Stage2/mdi_cart-outline_f5677l.png" className="h-8" alt="" />
+                  <img
+                    src="https://res.cloudinary.com/demmasgzp/image/upload/v1720901305/Stage2/mdi_cart-outline_f5677l.png"
+                    className="h-8"
+                    alt=""
+                  />
                 </button>
               </div>
             </div>
@@ -208,7 +216,7 @@ const addToCart = (cartItem) => {
             <p className="text-[#269255]"> @{product.buying_price}</p> */}
           </div>
         ))}
-        
+
         <div className="flex border-[1px] mx-10 bg-[#0F8642] md:hidden text-white py-4 px-6 rounded-xl mt-0 justify-between">
           <p>Available Products</p>
         </div>
@@ -219,12 +227,12 @@ const addToCart = (cartItem) => {
             <p className="noto-sans-regular">Products</p> */}
           </div>
           <div className="flex gap-3 items-center">
-          <button onClick={handleDecrement}>
-            <img
-              src="https://res.cloudinary.com/demmasgzp/image/upload/v1720302185/Stage2/square-arrow-left-double-round_ct7jpq.png"
-              className="bg-[#F5F5F5] h-14 px-6 py-4 border-[1px] rounded-lg  border-[#00000033]"
-              alt=""
-            />
+            <button onClick={handleDecrement}>
+              <img
+                src="https://res.cloudinary.com/demmasgzp/image/upload/v1720302185/Stage2/square-arrow-left-double-round_ct7jpq.png"
+                className="bg-[#F5F5F5] h-14 px-6 py-4 border-[1px] rounded-lg  border-[#00000033]"
+                alt=""
+              />
             </button>
             <p className="px-6 py-4 border-[1px] rounded-lg bg-[#F5F5F5]  border-[#00000033]">
               1
@@ -233,14 +241,14 @@ const addToCart = (cartItem) => {
               2
             </p>
             <p className="px-6 py-4 border-[1px] rounded-lg  border-[#00000033]">
-            {products.length/10}
+              {products.length / 10}
             </p>
             <button onClick={handleIncrement}>
-            <img
-              src="https://res.cloudinary.com/demmasgzp/image/upload/v1720302185/Stage2/square-arrow-right-double-round_armjwo.png"
-              className="h-14 px-6 py-4 border-[1px] rounded-lg bg-[#F5F5F5] border-[#00000033]"
-              alt=""
-            />
+              <img
+                src="https://res.cloudinary.com/demmasgzp/image/upload/v1720302185/Stage2/square-arrow-right-double-round_armjwo.png"
+                className="h-14 px-6 py-4 border-[1px] rounded-lg bg-[#F5F5F5] border-[#00000033]"
+                alt=""
+              />
             </button>
           </div>
         </div>
