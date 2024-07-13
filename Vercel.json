@@ -2,7 +2,7 @@
     "rewrites":[
         {
             "source":"/api/(.*)",
-            "destination":"http://api.timbu.cloud/"
+            "destination":"http://api.timbu.cloud/$1"
         },
         {
             "source":"/(.*)",
